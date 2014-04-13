@@ -21,7 +21,7 @@ If you use Apache Maven, simply add the following dependency to your [pom.xml](h
 ```
 
 If you choose to use this method, any servers your plugin will run on will be required to also run ArenaAPI as a standalone plugin.
-You should also add the following line to your plugin.yml file:
+It is also recommended that you add the following line to your plugin.yml file:
 
 ```yaml
 depend: [ArenaAPI]
