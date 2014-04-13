@@ -2,6 +2,7 @@ ArenaAPI  [![Build Status](https://travis-ci.org/psgs/ArenaAPI.png?branch=master
 ===========
 
 ArenaAPI is a Bukkit framework designed to make creating arenas in other plugins easy.
+Java documentation for this API can be found on [psgs' site](http://psgs.tk/arenaapi).
 
 There are two ways you can incorporate this API in your own code.
 
