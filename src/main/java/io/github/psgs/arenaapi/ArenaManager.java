@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class ArenaManager {
 
-    private static ArenaAPI plugin;
+    private static ArenaAPI plugin = ArenaAPI.getInstance();
     private static ArenaManager arenaManager;
 
     // Player's location before joining an arena
@@ -148,7 +148,7 @@ public class ArenaManager {
      */
     public void removeArena(int id) {
         Arena arena = getArena(id);
-        if(arena == null) {
+        if (arena == null) {
             return;
         }
         arenas.remove(arena);
@@ -179,8 +179,8 @@ public class ArenaManager {
      * Loads an existing arena from arena data
      *
      * @param spawn The existing arena's spawn location
-     * @param l1 The existing arena's top left arena bound
-     * @param l2 The existing arena's bottom right arena bound
+     * @param l1    The existing arena's top left arena bound
+     * @param l2    The existing arena's bottom right arena bound
      * @return The existing arena
      */
     public Arena reloadArena(Location spawn, Location l1, Location l2) {
@@ -196,19 +196,19 @@ public class ArenaManager {
     /**
      * Loads existing arenas from a config file
      */
-    public void loadGames(){
+    public void loadArenas() {
         arenaSize = 0;
 
-        if(plugin.getConfig().getIntegerList("Arenas.Arenas").isEmpty()){
-            return;
-        }
-
-        for(int id : plugin.getConfig().getIntegerList("Arenas.Arenas")){
-            Location spawn = deserializeLoc(plugin.getConfig().getString("Arenas." + id + ".spawn"));
-            Location l1 = deserializeLoc(plugin.getConfig().getString("Arenas." + id + ".l1"));
-            Location l2 = deserializeLoc(plugin.getConfig().getString("Arenas." + id + ".l2"));
-            Arena arena = reloadArena(spawn, l1, l2);
-            arena.id = id;
+        if (plugin.getConfig().contains("arenas.arenas")) {
+            if (plugin.getConfig().getIntegerList("Arenas.Arenas") != null && plugin.getConfig().get("arenas") != null) {
+                for (int id : plugin.getConfig().getIntegerList("Arenas.Arenas")) {
+                    Location spawn = deserializeLoc(plugin.getConfig().getString("Arenas." + id + ".spawn"));
+                    Location l1 = deserializeLoc(plugin.getConfig().getString("Arenas." + id + ".l1"));
+                    Location l2 = deserializeLoc(plugin.getConfig().getString("Arenas." + id + ".l2"));
+                    Arena arena = reloadArena(spawn, l1, l2);
+                    arena.id = id;
+                }
+            }
         }
     }
 
