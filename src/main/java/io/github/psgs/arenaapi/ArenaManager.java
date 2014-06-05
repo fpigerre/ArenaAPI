@@ -25,7 +25,7 @@ public class ArenaManager {
     List<Arena> arenas = new ArrayList<Arena>();
     int arenaSize = 0;
 
-    public ArenaManager() {
+    private ArenaManager() {
 
     }
 
