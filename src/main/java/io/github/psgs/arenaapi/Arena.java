@@ -13,6 +13,12 @@ public class Arena {
     Location l2;
     List<String> players = new ArrayList<String>();
 
+    /**
+     * @param id The arena's ID number
+     * @param spawn The arena's spawn location
+     * @param l1 The top left location of the arena boundary
+     * @param l2 The bottom right location of the arena boundary
+     */
     public Arena(int id, Location spawn, Location l1, Location l2) {
         this.id = id;
         this.spawn = spawn;

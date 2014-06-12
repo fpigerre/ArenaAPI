@@ -141,6 +141,22 @@ public class ArenaManager {
         return arena;
     }
 
+    public Arena createArena(Arena arena) {
+        arenas.add(arena);
+
+        // Sets the arena spawns and bounds in a config file
+        plugin.getConfig().set("Arenas." + arena.getId() + ".spawn", serializeLoc(arena.getSpawn()));
+        plugin.getConfig().set("Arenas." + arena.getId() + ".l1", serializeLoc(arena.l1));
+        plugin.getConfig().set("Arenas." + arena.getId() + ".l2", serializeLoc(arena.l2));
+
+        List<Integer> list = plugin.getConfig().getIntegerList("Arenas.Arenas");
+        list.add(arena.getId());
+        plugin.getConfig().set("Arenas.Arenas", list);
+        plugin.saveConfig();
+
+        return arena;
+    }
+
     /**
      * Removes an existing arena
      *
