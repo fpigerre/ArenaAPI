@@ -6,7 +6,7 @@ Java documentation for this API can be found on [psgs' site](http://psgs.tk/aren
 
 There are two ways you can incorporate this API in your own code.
 
-#### Adding ArenaAPI as a dependency
+### Adding ArenaAPI as a dependency
 
 The easiest way to incorporate ArenaAPI's functions in your plugin is to add ArenaAPI as a dependency.
 This can easily be done using [Apache Maven](http://maven.apache.org).
@@ -27,7 +27,7 @@ It is also recommended that you add the following line to your plugin.yml file:
 depend: [ArenaAPI]
 ```
 
-#### Incorporating the ArenaAPI package
+### Incorporating the ArenaAPI package
 
 The other way to use ArenaAPI in your plugin is to incorporate the ArenaAPI package as part of your code.
 
@@ -44,9 +44,9 @@ Now change 'ArenaAPI' to the name of your plugin's main class.
 
 Please remember to also copy across the [license]() packaged in this repository.
 
-#### Using ArenaAPI
+### Using ArenaAPI
 
-* Creating an Arena
+#### Creating an Arena
 ```java
 // Import the Arena and ArenaManager classes
 import io.github.psgs.arenaapi.Arena;
@@ -65,7 +65,7 @@ Arena arena = new Arena(int id, Location spawn, Location l1, Location l2);
 ArenaManager.getManager().createArena(arena);
 ```
 
-* Removing an Arena
+#### Removing an Arena
 ```java
 // Import the ArenaManager class
 import io.github.psgs.arenaapi.ArenaManager;
@@ -74,7 +74,7 @@ import io.github.psgs.arenaapi.ArenaManager;
 ArenaManager.getManager().removeArena(int id);
 ```
 
-* Getting an Arena
+#### Getting an Arena
 ```java
 // Import the Arena and ArenaManager classes
 import io.github.psgs.arenaapi.Arena;
@@ -84,7 +84,7 @@ import io.github.psgs.arenaapi.ArenaManager;
 Arena arena = ArenaManager.getManager().getArena(int id);
 ```
 
-* Add a Player
+#### Add a Player
 ```java
 // Import the ArenaManager class
 import io.github.psgs.arenaapi.ArenaManager;
@@ -93,7 +93,7 @@ import io.github.psgs.arenaapi.ArenaManager;
 ArenaManager.getManager().addPlayer(Player player, int id);
 ```
 
-* Remove a Player
+#### Remove a Player
 ```java
 // Import the ArenaManager class
 import io.github.psgs.arenaapi.ArenaManager;
